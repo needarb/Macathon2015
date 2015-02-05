@@ -16,7 +16,7 @@ public class MainWindow extends JFrame
         super();
         setTitle("Ned was here");
         add(new JButton("I AM A BUTTON"));
-        add(new JLabel("lol jk cardinal = worst bird"));
+        add(new JLabel("Twins = worst bird"));
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         pack();
         setVisible(true);
