@@ -5,7 +5,6 @@ import javax.swing.*;
  */
 public class MainWindow extends JFrame
 {
-
     public static void main(String[] args)
     {
         MainWindow main = new MainWindow();
@@ -16,7 +15,7 @@ public class MainWindow extends JFrame
         super();
         setTitle("Ned was here");
         add(new JButton("I AM A BUTTON"));
-        add(new JLabel("The vikings suck"));
+        add(new JLabel("Joni Ernst really?"));
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         pack();
         setVisible(true);
