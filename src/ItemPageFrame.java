@@ -80,7 +80,7 @@ public class ItemPageFrame extends javax.swing.JFrame {
 
         jLabel2.setBackground(new java.awt.Color(255, 218, 247));
         jLabel2.setFont(new java.awt.Font("Lao MN", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("SpeakEasy");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -106,7 +106,7 @@ public class ItemPageFrame extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 218, 247));
 
         jLabel3.setFont(new java.awt.Font("Heiti SC", 0, 16)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("User Content");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -126,7 +126,7 @@ public class ItemPageFrame extends javax.swing.JFrame {
         jPanel7.setBackground(new java.awt.Color(255, 218, 247));
 
         jLabel1.setFont(new java.awt.Font("Heiti SC", 0, 16)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Promoted Content");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
@@ -146,7 +146,7 @@ public class ItemPageFrame extends javax.swing.JFrame {
         jPanel8.setBackground(new java.awt.Color(255, 218, 247));
 
         jLabel4.setFont(new java.awt.Font("Heiti SC", 0, 16)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Community Content");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
@@ -166,7 +166,7 @@ public class ItemPageFrame extends javax.swing.JFrame {
         jPanel9.setBackground(new java.awt.Color(255, 218, 247));
 
         jLabel5.setFont(new java.awt.Font("Heiti SC", 0, 16)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Wild Card Content");
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);

@@ -311,7 +311,7 @@ public class DialoguePanel extends javax.swing.JPanel {
             @Override
             public void actionPerformed( ActionEvent e ){
                 String existingText = messageArea.getText();
-                String bResponse = "Anonymous Magpie has accepted your request!" + System.lineSeparator() + "Anonymous Narwhal is Ben Mathers" + System.lineSeparator() + "Anonymous Magpie is Matthias Broderson";
+                String bResponse = "Anonymous Magpie has accepted your request!" + System.lineSeparator() + "Anonymous Narwhal is Connor Valenti" + System.lineSeparator() + "Anonymous Magpie is Ben Mathers";
                 messageArea.setText(existingText + bResponse + System.lineSeparator());
             }
         });

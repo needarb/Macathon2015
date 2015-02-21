@@ -111,6 +111,9 @@ public class DataEntryFrame extends JFrame implements ContainerListener, ActionL
 
     public void finish()
     {
+        this.dispose();
+        String[] args = {};
+        ItemPageFrame.main(args);
 
     }
 }

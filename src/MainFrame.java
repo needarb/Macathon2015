@@ -29,7 +29,7 @@ public class MainFrame extends JFrame implements ActionListener
 
     public void actionPerformed(ActionEvent e){
        this.dispose();
-        DataEntryFrame entryFrame = new DataEntryFrame();
+       DataEntryFrame entryFrame = new DataEntryFrame();
 
     }
 }
