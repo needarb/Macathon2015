@@ -19,6 +19,11 @@ public class ItemPageFrame extends javax.swing.JFrame {
      * Creates new form ItemPage
      */
     public ItemPageFrame() {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         initComponents();
     }
 
@@ -379,11 +384,7 @@ public class ItemPageFrame extends javax.swing.JFrame {
                                 .addContainerGap()
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 963, Short.MAX_VALUE))
         );
-        try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
         pack();
     }// </editor-fold>                        
 
