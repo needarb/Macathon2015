@@ -21,7 +21,11 @@ public class DataEntryFrame extends JFrame implements ContainerListener, ActionL
     public DataEntryFrame()
     {
         super();
-
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         this.topPanel = new TopPanel(0,this);
         this.entryPanels = new DataEntryPanel[5];
         entryPanels[0] = new DataEntryPanel("Major",new MajorEntryForm());

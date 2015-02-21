@@ -17,6 +17,11 @@ public class MainFrame extends JFrame implements ActionListener
 
     public MainFrame()
     {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         this.setResizable(true);
         HomePagePanel homePagePanel = new HomePagePanel();
         add(homePagePanel);

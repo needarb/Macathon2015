@@ -10,7 +10,7 @@ import java.awt.image.BufferedImage;
 public class TopPanel extends JPanel implements MouseListener
 {
     public static final String[] MENU_OPTIONS = {"Major","Residential","Classes","Orgs","Interests"};
-    public static final Color FINISHED = new Color(50, 216, 204,200);
+    public static final Color FINISHED = new Color(255, 218, 204,200);
     public static final Color CURRENT = new Color(32, 31, 255,200);
     public static final Color TODO = new Color(43, 44, 39,200);
     private int active;
