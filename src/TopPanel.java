@@ -1,22 +1,27 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 
 /**
  * Created by needa_000 on 2/20/2015.
  */
-public class TopPanel extends JPanel
+public class TopPanel extends JPanel implements MouseListener
 {
-    public static final String[] MENU_OPTIONS = {"Major","Residential","Classes","Orgs","Work Study"};
+    public static final String[] MENU_OPTIONS = {"Major","Residential","Classes","Orgs","Interests"};
     public static final Color FINISHED = new Color(50, 216, 204,200);
     public static final Color CURRENT = new Color(32, 31, 255,200);
     public static final Color TODO = new Color(43, 44, 39,200);
     private int active;
-    public TopPanel(int active)
+    private DataEntryFrame entryFrame;
+    public TopPanel(int active, DataEntryFrame entryFrame)
     {
-        setPreferredSize(new Dimension(450,40));
+        setPreferredSize(new Dimension(450, 40));
         System.out.println("TopPanel created");
         this.active = active;
+        this.entryFrame = entryFrame;
+        addMouseListener(this);
         repaint();
     }
 
@@ -41,7 +46,7 @@ public class TopPanel extends JPanel
             bg2.fillRect(i * (int)Math.ceil(width / 5.0), 0, (int)Math.ceil(width / 5.0),height);
 
             bg2.setColor(Color.BLACK);
-            bg2.drawRect(i * (int)Math.ceil(width / 5.0), 0,(int)Math.ceil(width / 5.0)-1,height-1);
+            bg2.drawRect(i * (int) Math.ceil(width / 5.0), 0, (int) Math.ceil(width / 5.0) - 1, height - 1);
 
             int stringLen = (int)bg2.getFontMetrics().getStringBounds(MENU_OPTIONS[i], bg2).getWidth();
             int start = width/5/2 - stringLen/2;
@@ -50,5 +55,45 @@ public class TopPanel extends JPanel
 
         }
         g.drawImage(b,0,0,null);
+    }
+
+
+    public void setSelected(int id)
+    {
+        if(id >= MENU_OPTIONS.length)
+            return;
+        else
+            active = id;
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e)
+    {
+
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e)
+    {
+
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e)
+    {
+        int sectionClickedOn = e.getX()/(getWidth()/MENU_OPTIONS.length);
+        entryFrame.goToEntryForm(sectionClickedOn);
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e)
+    {
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e)
+    {
+
     }
 }

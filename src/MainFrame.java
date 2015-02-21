@@ -28,13 +28,8 @@ public class MainFrame extends JFrame implements ActionListener
     }
 
     public void actionPerformed(ActionEvent e){
-        this.setVisible(false);
-        this.remove(this.mainPanel);
-        this.setLayout(new BorderLayout());
-        this.add(new TopPanel(0), BorderLayout.NORTH);
-        this.add(new DataEntryPanel("Residential", new ResidentialEntryForm()));
-        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        this.pack();
-        this.setVisible(true);
+       this.dispose();
+        DataEntryFrame entryFrame = new DataEntryFrame();
+
     }
 }

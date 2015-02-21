@@ -29,8 +29,9 @@ public class ResidentialEntryForm extends DataEntryForm
         semesterBox.addItem("Fall");
         floorSpinner = new JSpinner();
         yearSpinner = new JSpinner();
-
+        addFocusListener(this);
         buildingField = new JTextField(BUILDING_DEFAULT);
+        buildingField.addFocusListener(this);
         resetForm();
         add(semesterBox);
         add(yearSpinner);
@@ -48,7 +49,7 @@ public class ResidentialEntryForm extends DataEntryForm
     @Override
     public void resetForm()
     {
-        semesterBox.setSelectedIndex(0);
+        semesterBox.setSelectedIndex(1);
         yearSpinner.setValue(2015);
         floorSpinner.setValue(0);
         buildingField.setText(BUILDING_DEFAULT);
@@ -57,7 +58,14 @@ public class ResidentialEntryForm extends DataEntryForm
     @Override
     public void focusGained(FocusEvent e)
     {
-        semesterBox.requestFocusInWindow();
+        if(e.getSource() == buildingField)
+        {
+            if (buildingField.getText().equals(BUILDING_DEFAULT))
+                buildingField.selectAll();
+        }
+        else
+            semesterBox.requestFocusInWindow();
+
     }
 
     @Override

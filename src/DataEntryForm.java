@@ -26,5 +26,6 @@ public abstract class DataEntryForm extends JPanel implements ActionListener,Foc
     {
         for(EnterListener el: enterListeners)
             el.onFormEnter(this);
+
     }
 }
