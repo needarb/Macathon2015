@@ -188,37 +188,37 @@ public class ItemPageFrame extends javax.swing.JFrame {
                         .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
         );
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("rsz_xbox.jpg"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("images/rsz_xbox.jpg"))); // NOI18N
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("rsz_nike.jpg"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("images/rsz_nike.jpg"))); // NOI18N
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("rsz_buzzfeed.png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("images/rsz_buzzfeed.png"))); // NOI18N
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("rsz_donkey.png"))); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("images/rsz_donkey.png"))); // NOI18N
         jLabel9.setText("\n");
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("rsz_bagpipes.jpg"))); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("images/rsz_bagpipes.jpg"))); // NOI18N
         jLabel10.setText("\n\n");
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("rsz_baseball.jpg"))); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("images/rsz_baseball.jpg"))); // NOI18N
         jLabel11.setText("\n");
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("rsz_onehunny.jpg"))); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("images/rsz_onehunny.jpg"))); // NOI18N
         jLabel12.setText("\n");
 
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("rsz_sushi.jpg"))); // NOI18N
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("images/rsz_sushi.jpg"))); // NOI18N
 
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("rsz_statements.jpg"))); // NOI18N
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("images/rsz_statements.jpg"))); // NOI18N
         jLabel14.setAlignmentX(0.5F);
         jLabel14.setPreferredSize(new java.awt.Dimension(132, 150));
 
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("rsz_wacpac.jpg"))); // NOI18N
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("images/rsz_wacpac.jpg"))); // NOI18N
 
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("rsz_dunn-bros.jpg"))); // NOI18N
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("images/rsz_dunn-bros.jpg"))); // NOI18N
 
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("rsz_macathon-square-poster.jpg"))); // NOI18N
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("images/rsz_macathon-square-poster.jpg"))); // NOI18N
 
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("rsz_orangutan.jpg"))); // NOI18N
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("images/rsz_orangutan.jpg"))); // NOI18N
 
         //TODO figure this ish out
         jLabel18.addMouseListener(new MouseListener()
@@ -261,11 +261,11 @@ public class ItemPageFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("rsz_bach.jpg"))); // NOI18N
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("images/rsz_bach.jpg"))); // NOI18N
 
-        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("rsz_x.jpg"))); // NOI18N
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("images/rsz_x.jpg"))); // NOI18N
 
-        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("rsz_league.png"))); // NOI18N
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("images/rsz_league.png"))); // NOI18N
 
         jPanel4.setBackground(new java.awt.Color(150, 0, 118));
 

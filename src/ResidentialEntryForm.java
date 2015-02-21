@@ -12,11 +12,12 @@ public class ResidentialEntryForm extends DataEntryForm
     public static void main(String[] args)
     {
         JFrame main = new JFrame();
-        main.add(new DataEntryPanel("Residential",new ResidentialEntryForm()));
+        main.add(new DataEntryPanel("Residential", new ResidentialEntryForm()));
         main.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         main.pack();
         main.setVisible(true);
     }
+
     private JComboBox<String> semesterBox;
     private JTextField buildingField;
     private JSpinner floorSpinner;
@@ -25,6 +26,13 @@ public class ResidentialEntryForm extends DataEntryForm
     public ResidentialEntryForm()
     {
         super();
+
+        addFocusListener(this);
+        initComponents();
+    }
+
+    private void initComponents()
+    {
         semesterBox = new JComboBox<String>();
         semesterBox.addItem("Spring");
         semesterBox.addItem("Fall");
@@ -35,20 +43,21 @@ public class ResidentialEntryForm extends DataEntryForm
         editor.getFormat().setGroupingUsed(false);
         yearSpinner.setEditor(editor);
 
-        addFocusListener(this);
         buildingField = new JTextField(BUILDING_DEFAULT);
         buildingField.addFocusListener(this);
         buildingField.setPreferredSize(new Dimension(150, 20));
+        buildingField.addActionListener(this);
+
         resetForm();
+
         add(new JLabel("When? "));
         add(semesterBox);
         add(yearSpinner);
         add(new JLabel("Floor? "));
         add(floorSpinner);
         add(buildingField);
-        buildingField.addActionListener(this);
-
     }
+
     @Override
     public String convertToString()
     {
@@ -67,7 +76,7 @@ public class ResidentialEntryForm extends DataEntryForm
     @Override
     public void focusGained(FocusEvent e)
     {
-        if(e.getSource() == buildingField)
+        if (e.getSource() == buildingField)
         {
             if (buildingField.getText().equals(BUILDING_DEFAULT))
                 buildingField.selectAll();

@@ -17,13 +17,14 @@ public abstract class DataEntryForm extends JPanel implements ActionListener,Foc
         componentPanel = new JPanel();
         enterButton = new JButton("Enter");
         enterButton.addActionListener(this);
+
         super.add(componentPanel);
         super.add(enterButton);
+
 
     }
     public abstract String convertToString();
     public abstract void resetForm();
-
 
     public void addEnterListener(EnterListener el)
     {
@@ -41,7 +42,6 @@ public abstract class DataEntryForm extends JPanel implements ActionListener,Foc
     @Override
     public Component add(Component comp)
     {
-        System.out.println("Added something");
         componentPanel.add(comp);
         return comp;
     }

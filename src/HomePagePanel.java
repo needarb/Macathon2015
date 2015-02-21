@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.io.File;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -198,9 +197,9 @@ public class HomePagePanel extends javax.swing.JPanel {
         );
 
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("plaid.jpg"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("images/plaid.jpg"))); // NOI18N
 
-       jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("plaid.jpg"))); // NOI18N
+       jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("images/plaid.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

@@ -3,7 +3,5 @@
  */
 public interface EnterListener
 {
-
     public abstract void onFormEnter(DataEntryForm dataForm);
-
 }

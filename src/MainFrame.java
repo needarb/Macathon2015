@@ -22,14 +22,17 @@ public class MainFrame extends JFrame implements ActionListener
         } catch (Exception e) {
             e.printStackTrace();
         }
-        this.setResizable(true);
+
         HomePagePanel homePagePanel = new HomePagePanel();
+        homePagePanel.jButton1.addActionListener(this);
+        this.mainPanel = new HomePagePanel();
         add(homePagePanel);
+
+        this.setResizable(true);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         pack();
         setVisible(true);
-        this.mainPanel = homePagePanel;
-        homePagePanel.jButton1.addActionListener(this);
+
     }
 
     public void actionPerformed(ActionEvent e){

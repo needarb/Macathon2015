@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
@@ -203,7 +202,7 @@ public class DialoguePanel extends javax.swing.JPanel {
 
         leftSidePanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        ImageIcon icon = new javax.swing.ImageIcon(getClass().getResource("plaid.jpg"));
+        ImageIcon icon = new javax.swing.ImageIcon(getClass().getResource("images/plaid.jpg"));
         jLabel1.setIcon(icon); // NOI18N
         jLabel1.setText("jLabel1");
         jLabel1.setMaximumSize(new java.awt.Dimension(122, 19));
@@ -229,7 +228,7 @@ public class DialoguePanel extends javax.swing.JPanel {
 
         rightSidePanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("plaid.jpg"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("images/plaid.jpg"))); // NOI18N
         jLabel3.setText("jLabel1");
         jLabel3.setMaximumSize(new java.awt.Dimension(122, 19));
         jLabel3.setMinimumSize(new java.awt.Dimension(122, 19));

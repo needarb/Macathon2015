@@ -7,7 +7,7 @@ import java.awt.image.BufferedImage;
 /**
  * Created by needa_000 on 2/20/2015.
  */
-public class TopPanel extends JPanel implements MouseListener
+public class DataEntryNavigationBar extends JPanel implements MouseListener
 {
     public static final String[] MENU_OPTIONS = {"Major","Residential","Classes","Orgs","Interests"};
     public static final Color FINISHED = new Color(255, 218, 204,200);
@@ -15,10 +15,10 @@ public class TopPanel extends JPanel implements MouseListener
     public static final Color TODO = new Color(43, 44, 39,200);
     private int active;
     private DataEntryFrame entryFrame;
-    public TopPanel(int active, DataEntryFrame entryFrame)
+    public DataEntryNavigationBar(int active, DataEntryFrame entryFrame)
     {
         setPreferredSize(new Dimension(450, 40));
-        System.out.println("TopPanel created");
+        System.out.println("DataEntryNavigationBar created");
         this.active = active;
         this.entryFrame = entryFrame;
         addMouseListener(this);

@@ -9,7 +9,6 @@ public class DataEntryPanel extends JPanel implements EnterListener
 {
     private static final String ITEMIZER = "-";
     private DataEntryForm entryForm;
-    private BufferedImage background;
     private JPanel componentPanel;
     public DataEntryPanel(String title, DataEntryForm entryForm)
     {
@@ -19,17 +18,42 @@ public class DataEntryPanel extends JPanel implements EnterListener
         } catch (Exception e) {
             e.printStackTrace();
         }
-        this.background = DataLoader.loadImage("plaid.jpg");
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        this.entryForm = entryForm;
-        entryForm.addEnterListener(this);
-        setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+
+        createTitlePanel(title);
+        createEntryPanel(entryForm);
+        makePanelWhite();
+    }
+
+    private void createTitlePanel(String title)
+    {
         JPanel titlePanel = new JPanel();
         JLabel titleLabel = new JLabel(title);
         titleLabel.setFont(new Font("Times New Roman",Font.BOLD,18));
         titlePanel.add(titleLabel);
         add(titlePanel);
+
+    }
+
+    private void createEntryPanel(DataEntryForm entryForm)
+    {
+        this.entryForm = entryForm;
+        entryForm.addEnterListener(this);
         add(entryForm);
+    }
+
+
+
+    private void makePanelWhite()
+    {
+        for(Component comp: this.getComponents())
+            if(comp instanceof JPanel)
+            {
+                comp.setBackground(Color.WHITE);
+                for(Component comp2: ((JPanel)comp).getComponents())
+                    if(comp2 instanceof JPanel)
+                        comp2.setBackground(Color.WHITE);
+            }
     }
 
 
@@ -38,13 +62,16 @@ public class DataEntryPanel extends JPanel implements EnterListener
     {
         String text = dataForm.convertToString();
         remove(dataForm);
+
         JPanel formDataPanel = new JPanel();
+        formDataPanel.setBackground(Color.WHITE);
         JLabel formDataLabel = new JLabel(ITEMIZER + " " + text);
         formDataPanel.add(formDataLabel);
-        formDataPanel.setBackground(new Color(0,0,0,0));
         add(formDataPanel);
+
         dataForm.resetForm();
         add(dataForm);
+
         dataForm.requestFocusInWindow();
         updateUI();
     }

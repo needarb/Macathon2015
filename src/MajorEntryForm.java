@@ -15,12 +15,18 @@ public class MajorEntryForm extends DataEntryForm
     {
         super();
         addFocusListener(this);
+        initComponents();
+    }
+
+    private void initComponents()
+    {
         textField = new JTextField(DEFAULT_TEXT);
         textField.addActionListener(this);
         textField.addFocusListener(this);
         textField.setPreferredSize(new Dimension(150,20));
         add(textField);
     }
+
     @Override
     public String convertToString()
     {
@@ -41,6 +47,8 @@ public class MajorEntryForm extends DataEntryForm
             textField.requestFocusInWindow();
             textField.selectAll();
         }
+        else
+            textField.requestFocusInWindow();
     }
 
     @Override

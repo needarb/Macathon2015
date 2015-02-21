@@ -7,15 +7,12 @@ import java.awt.event.*;
  */
 public class DataEntryFrame extends JFrame implements ContainerListener, ActionListener
 {
+    private DataEntryNavigationBar dataEntryNavigationBar;
 
-    public static void main(String[] args)
-    {
-        DataEntryFrame frame = new DataEntryFrame();
-    }
-    private TopPanel topPanel;
-    private int currentID;
     private DataEntryPanel[] entryPanels;
     private  DataEntryPanel currentPanel;
+    private int currentID;
+
     private JButton nextButton;
     private JButton previousButton;
     public DataEntryFrame()
@@ -26,8 +23,27 @@ public class DataEntryFrame extends JFrame implements ContainerListener, ActionL
         } catch (Exception e) {
             e.printStackTrace();
         }
-        this.topPanel = new TopPanel(0,this);
-        this.entryPanels = new DataEntryPanel[5];
+        setLayout(new BorderLayout());
+
+        createTopPanel();
+        createPanels();
+        createButtons();
+
+        setBackground(Color.WHITE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        pack();
+        setVisible(true);
+    }
+
+    private void createTopPanel()
+    {
+        dataEntryNavigationBar = new DataEntryNavigationBar(0,this);
+        add(dataEntryNavigationBar,BorderLayout.NORTH);
+    }
+
+    private void createPanels()
+    {
+        entryPanels = new DataEntryPanel[5];
         entryPanels[0] = new DataEntryPanel("Major",new MajorEntryForm());
         entryPanels[1] = new DataEntryPanel("Residential",new ResidentialEntryForm());
         entryPanels[2] = new DataEntryPanel("Classes",new ClassEntryForm());
@@ -35,22 +51,22 @@ public class DataEntryFrame extends JFrame implements ContainerListener, ActionL
         entryPanels[4] = new DataEntryPanel("Interests",new InterestEntryForm());
         for(DataEntryPanel ep: entryPanels)
             ep.addContainerListener(this);
-        this.currentPanel = entryPanels[0];
-        this.nextButton = new JButton("Next Section");
-        this.previousButton = new JButton("Previous Section");
+        currentPanel = entryPanels[0];
+        add(currentPanel);
+    }
+
+    private void createButtons()
+    {
+        nextButton = new JButton("Next Section");
+        previousButton = new JButton("Previous Section");
         previousButton.setEnabled(false);
         nextButton.addActionListener(this);
         previousButton.addActionListener(this);
-        setLayout(new BorderLayout());
-        add(topPanel,BorderLayout.NORTH);
-        add(currentPanel);
         JPanel buttonPanel = new JPanel();
         buttonPanel.add(previousButton);
         buttonPanel.add(nextButton);
+        buttonPanel.setBackground(Color.WHITE);
         add(buttonPanel, BorderLayout.SOUTH);
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        pack();
-        setVisible(true);
     }
 
     public void goToEntryForm(int id)
@@ -59,15 +75,8 @@ public class DataEntryFrame extends JFrame implements ContainerListener, ActionL
         remove(currentPanel);
         currentPanel = entryPanels[id];
         add(currentPanel);
-        topPanel.setSelected(id);
-        SwingUtilities.invokeLater(new Runnable()
-        {
-            @Override
-            public void run()
-            {
-                pack();
-            }
-        });
+        dataEntryNavigationBar.setSelected(id);
+
         if(id == entryPanels.length - 1)
             nextButton.setText("Finish");
         else if (id == 0)
@@ -80,13 +89,20 @@ public class DataEntryFrame extends JFrame implements ContainerListener, ActionL
             previousButton.setEnabled(true);
         }
 
+        SwingUtilities.invokeLater(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                pack();
+            }
+        });
         repaint();
     }
 
     @Override
     public void componentAdded(ContainerEvent e)
     {
-        System.out.println("Something added");
         pack();
     }
 
@@ -108,9 +124,7 @@ public class DataEntryFrame extends JFrame implements ContainerListener, ActionL
 
         }
         else if(e.getSource() == previousButton)
-        {
             goToEntryForm(currentID - 1);
-        }
     }
 
     public void finish()

@@ -25,6 +25,11 @@ public class InterestEntryForm extends DataEntryForm
     {
         super();
         addFocusListener(this);
+        initComponents();
+    }
+
+    private void initComponents()
+    {
         interestField = new JTextField();
         interestField.addActionListener(this);
         interestField.addFocusListener(this);

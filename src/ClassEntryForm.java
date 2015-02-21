@@ -25,6 +25,13 @@ public class ClassEntryForm extends DataEntryForm
     public ClassEntryForm()
     {
         super();
+        addFocusListener(this);
+        initComponents();
+
+    }
+
+    private void initComponents()
+    {
         semesterBox = new JComboBox<String>();
         semesterBox.addItem("Spring");
         semesterBox.addItem("Fall");
@@ -44,6 +51,7 @@ public class ClassEntryForm extends DataEntryForm
         add(yearSpinner);
         add(classField);
     }
+
     @Override
     public String convertToString()
     {
@@ -64,6 +72,10 @@ public class ClassEntryForm extends DataEntryForm
         {
             if(classField.getText().equals(CLASS_DEFAULT))
                 classField.selectAll();
+        }
+        else
+        {
+            semesterBox.requestFocusInWindow();
         }
     }
 

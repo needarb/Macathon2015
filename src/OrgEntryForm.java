@@ -24,12 +24,18 @@ public class OrgEntryForm extends DataEntryForm
     public OrgEntryForm()
     {
         super();
-        orgNameField = new JTextField();
-        orgNameField.addActionListener(this);
-        orgNameField.addFocusListener(this);
+        addFocusListener(this);
+        initComponents();
+    }
+
+    private void initComponents()
+    {
         orgSizeBox = new JComboBox<String>();
         orgSizeBox.addItem("Large");
         orgSizeBox.addItem("Small");
+        orgNameField = new JTextField();
+        orgNameField.addActionListener(this);
+        orgNameField.addFocusListener(this);
         orgNameField.setPreferredSize(new Dimension(150,20));
         resetForm();
         add(orgSizeBox);
@@ -51,8 +57,12 @@ public class OrgEntryForm extends DataEntryForm
     public void focusGained(FocusEvent e)
     {
         if(e.getSource() == orgNameField)
-            if(orgNameField.getText().equals(ORG_NAME_DEFAULT))
+        {
+            if (orgNameField.getText().equals(ORG_NAME_DEFAULT))
                 orgNameField.selectAll();
+        }
+        else
+              orgSizeBox.requestFocusInWindow();
     }
 
     @Override
