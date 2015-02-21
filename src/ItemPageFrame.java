@@ -226,13 +226,14 @@ public class ItemPageFrame extends javax.swing.JFrame {
             @Override
             public void mouseClicked(MouseEvent e)
             {
-                System.out.println("asdfasdf");
                 JFrame dialogueFrame = new JFrame();
                 DialoguePanel dialoguePanel = new DialoguePanel();
+                dialoguePanel.setAutoscrolls(true);
+
                 dialoguePanel.setVisible(true);
-                dialogueFrame.add(dialoguePanel);
                 dialogueFrame.setVisible(true);
-                dialogueFrame.setResizable(false);
+                dialogueFrame.add(dialoguePanel);
+                dialogueFrame.setResizable(true);
                 dialogueFrame.pack();
             }
 
