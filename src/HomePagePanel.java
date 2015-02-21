@@ -1,16 +1,24 @@
+import javax.swing.*;
+import java.io.File;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
- */
-package macathon;
-
 /**
  *
  * @author rberman
  */
 public class HomePagePanel extends javax.swing.JPanel {
 
+    public static void main(String[] args)
+    {
+        JFrame frame = new JFrame();
+        frame.add(new HomePagePanel());
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+    }
     /**
      * Creates new form HomePagePanel
      */
@@ -132,6 +140,7 @@ public class HomePagePanel extends javax.swing.JPanel {
         jTextArea1.setRows(5);
         jTextArea1.setText("\n     Welcome to SpeakEasy! \n     SpeakEasy connects you with new or unfamiliar peers on campus.  \n     How it works:\n          We match you to people on campus who you might not know.\n          You strike up a conversation based on shared interests.\n          A friendship blossoms!");
         jTextArea1.setBorder(null);
+        jTextArea1.setEditable(false);
         jScrollPane1.setViewportView(jTextArea1);
 
         jButton1.setBackground(new java.awt.Color(50, 216, 204));
@@ -188,9 +197,10 @@ public class HomePagePanel extends javax.swing.JPanel {
                         .addGap(0, 924, Short.MAX_VALUE)
         );
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/macathon/plaid.jpg"))); // NOI18N
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/macathon/plaid.jpg"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("plaid.jpg"))); // NOI18N
+
+       jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("plaid.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -307,11 +317,11 @@ public class HomePagePanel extends javax.swing.JPanel {
     }// </editor-fold>                        
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        System.out.println("Button Pressed");
     }
 
     private void jFormattedTextField1ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        System.out.println("Action Performed");
     }
 
 
