@@ -6,29 +6,52 @@ import java.awt.event.FocusEvent;
  */
 public class InterestEntryForm extends DataEntryForm
 {
+    private static final String INTEREST_DEFAULT = "Enter an interest";
+
+
     private JTextField interestField;
+
+    public static void main(String[] args)
+    {
+        JFrame main = new JFrame();
+        main.add(new DataEntryPanel("Interests",new InterestEntryForm()));
+        main.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        main.pack();
+        main.setVisible(true);
+    }
+
     public InterestEntryForm()
     {
         super();
-     //   interestField;
+        addFocusListener(this);
+        interestField = new JTextField();
+        interestField.addActionListener(this);
+        interestField.addFocusListener(this);
+        resetForm();
+        add(interestField);
     }
 
     @Override
     public String convertToString()
     {
-        return null;
+        return interestField.getText();
     }
 
     @Override
     public void resetForm()
     {
-
+        interestField.setText(INTEREST_DEFAULT);
+        interestField.requestFocusInWindow();
     }
 
     @Override
     public void focusGained(FocusEvent e)
     {
-
+        if(e.getSource() == this)
+        interestField.requestFocusInWindow();
+        if(e.getSource() == interestField)
+            if(interestField.getText().equals(INTEREST_DEFAULT))
+                interestField.selectAll();
     }
 
     @Override

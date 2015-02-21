@@ -1,19 +1,15 @@
 import javax.swing.*;
+import java.awt.*;
+import java.awt.image.BufferedImage;
 
 /**
  * Created by needa_000 on 2/21/2015.
  */
 public class DataEntryPanel extends JPanel implements EnterListener
 {
-    public static void main(String[] args)
-    {
-        JFrame main = new JFrame();
-        main.add(new DataEntryPanel("Majors",new MajorEntryForm()));
-        main.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        main.pack();
-        main.setVisible(true);
-    }
+    private static final String ITEMIZER = "-";
     private DataEntryForm entryForm;
+    private BufferedImage background;
 
     public DataEntryPanel(String title, DataEntryForm entryForm)
     {
@@ -23,11 +19,16 @@ public class DataEntryPanel extends JPanel implements EnterListener
         } catch (Exception e) {
             e.printStackTrace();
         }
+        this.background = DataLoader.loadImage("plaid.jpg");
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.entryForm = entryForm;
         entryForm.addEnterListener(this);
         setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
-        add(new JLabel(title));
+        JPanel titlePanel = new JPanel();
+        JLabel titleLabel = new JLabel(title);
+        titleLabel.setFont(new Font("Times New Roman",Font.BOLD,18));
+        titlePanel.add(titleLabel);
+        add(titlePanel);
         add(entryForm);
     }
 
@@ -36,11 +37,21 @@ public class DataEntryPanel extends JPanel implements EnterListener
     {
         String text = dataForm.convertToString();
         remove(dataForm);
-        add(new JLabel(text));
+        JPanel formDataPanel = new JPanel();
+        JLabel formDataLabel = new JLabel(ITEMIZER + " " + text);
+        formDataPanel.add(formDataLabel);
+        formDataPanel.setBackground(new Color(0,0,0,0));
+        add(formDataPanel);
         dataForm.resetForm();
         add(dataForm);
         dataForm.requestFocusInWindow();
         updateUI();
+    }
+
+    @Override
+    public void paintComponent(Graphics g)
+    {
+        g.drawImage(background,0,0,null);
     }
 
 

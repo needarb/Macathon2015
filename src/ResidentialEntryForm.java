@@ -1,20 +1,17 @@
 import javax.swing.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.awt.event.FocusEvent;
-import java.util.Calendar;
-import java.util.Date;
 
 /**
  * Created by needa_000 on 2/21/2015.
  */
-public class ResidentalEntryForm extends DataEntryForm
+public class ResidentialEntryForm extends DataEntryForm
 {
     private static final String BUILDING_DEFAULT = "Enter a building";
 
     public static void main(String[] args)
     {
         JFrame main = new JFrame();
-        main.add(new DataEntryPanel("Residential",new ResidentalEntryForm()));
+        main.add(new DataEntryPanel("Residential",new ResidentialEntryForm()));
         main.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         main.pack();
         main.setVisible(true);
@@ -24,7 +21,7 @@ public class ResidentalEntryForm extends DataEntryForm
     private JSpinner floorSpinner;
     private JSpinner yearSpinner;
 
-    public ResidentalEntryForm()
+    public ResidentialEntryForm()
     {
         super();
         semesterBox = new JComboBox<String>();
