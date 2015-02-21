@@ -48,11 +48,5 @@ public class DataEntryPanel extends JPanel implements EnterListener
         updateUI();
     }
 
-    @Override
-    public void paintComponent(Graphics g)
-    {
-        g.drawImage(background,0,0,null);
-    }
-
 
 }

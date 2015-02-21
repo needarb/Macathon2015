@@ -14,7 +14,7 @@ public class TopPanel extends JPanel
     private int active;
     public TopPanel(int active)
     {
-        setMinimumSize(new Dimension(0,50));
+        setPreferredSize(new Dimension(450,40));
         System.out.println("TopPanel created");
         this.active = active;
         repaint();
@@ -29,7 +29,7 @@ public class TopPanel extends JPanel
         BufferedImage b = new BufferedImage(width,height,BufferedImage.TYPE_INT_ARGB);
         Graphics2D bg2 = (Graphics2D)b.getGraphics();
         bg2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        bg2.setFont(new Font("Times New Roman", Font.BOLD, 18));
+        bg2.setFont(new Font("Times New Roman", Font.BOLD, 14));
         for (int i = 0; i < MENU_OPTIONS.length; i++)
         {
             if(i < active)
