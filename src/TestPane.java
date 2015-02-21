@@ -11,7 +11,8 @@ public class TestPane extends JPanel implements AdjustmentListener, Scrollable
     public static void main(String[] args)
     {
         JFrame frame = new JFrame("This is a test");
-        frame.add(new TestPane());
+        frame.setLayout(new BorderLayout());
+        frame.add(new TopPanel(2), BorderLayout.CENTER);
         frame.pack();
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setVisible(true);
@@ -36,6 +37,7 @@ public class TestPane extends JPanel implements AdjustmentListener, Scrollable
             middlePanel.add(b);
         }
         add(middlePanel, BorderLayout.CENTER);
+
 
     }
 
