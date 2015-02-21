@@ -4,16 +4,21 @@
  * and open the template in the editor.
  */
 
+import javax.swing.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
 /**
  *
  * @author henry
  */
-public class ItemPagePanel extends javax.swing.JFrame {
+public class ItemPageFrame extends javax.swing.JFrame {
+
 
     /**
      * Creates new form ItemPage
      */
-    public ItemPagePanel() {
+    public ItemPageFrame() {
         initComponents();
     }
 
@@ -178,43 +183,84 @@ public class ItemPagePanel extends javax.swing.JFrame {
                         .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
         );
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("/Users/henry/Downloads/rsz_xbox.jpg")); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("rsz_xbox.jpg"))); // NOI18N
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("/Users/henry/Downloads/rsz_nike.jpg")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("rsz_nike.jpg"))); // NOI18N
 
-        jLabel8.setIcon(new javax.swing.ImageIcon("/Users/henry/Downloads/rsz_buzzfeed.png")); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("rsz_buzzfeed.png"))); // NOI18N
 
-        jLabel9.setIcon(new javax.swing.ImageIcon("/Users/henry/Downloads/rsz_donkey.png")); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("rsz_donkey.png"))); // NOI18N
         jLabel9.setText("\n");
 
-        jLabel10.setIcon(new javax.swing.ImageIcon("/Users/henry/Downloads/rsz_bagpipes.jpg")); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("rsz_bagpipes.jpg"))); // NOI18N
         jLabel10.setText("\n\n");
 
-        jLabel11.setIcon(new javax.swing.ImageIcon("/Users/henry/Downloads/rsz_baseball.jpg")); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("rsz_baseball.jpg"))); // NOI18N
         jLabel11.setText("\n");
 
-        jLabel12.setIcon(new javax.swing.ImageIcon("/Users/henry/Downloads/rsz_onehunny.jpg")); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("rsz_onehunny.jpg"))); // NOI18N
         jLabel12.setText("\n");
 
-        jLabel13.setIcon(new javax.swing.ImageIcon("/Users/henry/Downloads/rsz_sushi.jpg")); // NOI18N
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("rsz_sushi.jpg"))); // NOI18N
 
-        jLabel14.setIcon(new javax.swing.ImageIcon("/Users/henry/Desktop/statements.jpeg")); // NOI18N
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("rsz_statements.jpg"))); // NOI18N
         jLabel14.setAlignmentX(0.5F);
         jLabel14.setPreferredSize(new java.awt.Dimension(132, 150));
 
-        jLabel15.setIcon(new javax.swing.ImageIcon("/Users/henry/Downloads/rsz_wacpac.jpg")); // NOI18N
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("rsz_wacpac.jpg"))); // NOI18N
 
-        jLabel16.setIcon(new javax.swing.ImageIcon("/Users/henry/Downloads/rsz_dunn-bros.jpg")); // NOI18N
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("rsz_dunn-bros.jpg"))); // NOI18N
 
-        jLabel17.setIcon(new javax.swing.ImageIcon("/Users/henry/Downloads/rsz_macathon-square-poster.jpg")); // NOI18N
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("rsz_macathon-square-poster.jpg"))); // NOI18N
 
-        jLabel18.setIcon(new javax.swing.ImageIcon("/Users/henry/Downloads/rsz_orangutan.jpg")); // NOI18N
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("rsz_orangutan.jpg"))); // NOI18N
 
-        jLabel19.setIcon(new javax.swing.ImageIcon("/Users/henry/Downloads/rsz_bach.jpg")); // NOI18N
+        //TODO figure this ish out
+        jLabel18.addMouseListener(new MouseListener()
+        {
+            @Override
+            public void mouseClicked(MouseEvent e)
+            {
+                System.out.println("asdfasdf");
+                JFrame dialogueFrame = new JFrame();
+                DialoguePanel dialoguePanel = new DialoguePanel();
+                dialoguePanel.setVisible(true);
+                dialogueFrame.add(dialoguePanel);
+                dialogueFrame.setVisible(true);
+                dialogueFrame.setResizable(false);
+                dialogueFrame.pack();
+            }
 
-        jLabel20.setIcon(new javax.swing.ImageIcon("/Users/henry/Downloads/rsz_x.jpg")); // NOI18N
+            @Override
+            public void mousePressed(MouseEvent e)
+            {
+                //nothing happens
+            }
 
-        jLabel21.setIcon(new javax.swing.ImageIcon("/Users/henry/Downloads/rsz_league.png")); // NOI18N
+            @Override
+            public void mouseReleased(MouseEvent e)
+            {
+                //nothing happens
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e)
+            {
+                //nothing happens
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e)
+            {
+                //nothing happens
+            }
+        });
+
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("rsz_bach.jpg"))); // NOI18N
+
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("rsz_x.jpg"))); // NOI18N
+
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("rsz_league.png"))); // NOI18N
 
         jPanel4.setBackground(new java.awt.Color(150, 0, 118));
 
@@ -358,20 +404,20 @@ public class ItemPagePanel extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ItemPagePanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ItemPageFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ItemPagePanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ItemPageFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ItemPagePanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ItemPageFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ItemPagePanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ItemPageFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ItemPagePanel().setVisible(true);
+                new ItemPageFrame().setVisible(true);
             }
         });
     }

@@ -10,23 +10,29 @@ import java.util.Scanner;
  */
 public class MainWindow extends JFrame
 {
-    public static void main(String[] args)
+    public static void main(String[] args) throws FileNotFoundException
     {
-        HashMap<String, Color> colorMap = loadColors("res/colors.pref");
-        for(String s: colorMap.keySet())
-        {
-            System.out.println(colorMap.get(s));
-        }
+//        HashMap<String, Color> colorMap = loadColors("res/colors.pref");
+//        for(String s: colorMap.keySet())
+//        {
+//            System.out.println(colorMap.get(s));
+//        }
+//
+        MainWindow window = new MainWindow();
+        DialoguePanel dialoguePanel = new DialoguePanel();
+        window.add(dialoguePanel);
+        window.pack();
+//        Scanner scanner = new Scanner(new File("macathon2015//res//images//test.txt"));
     }
 
     public MainWindow()
     {
         super();
-        setTitle("Ned was here");
-        add(new JButton("I AM A BUTTON"));
-        add(new JLabel("I like a!"));
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        pack();
+        setTitle("Speakeasy");
+////        add(new JButton("I AM A BUTTON"));
+////        add(new JLabel("I like a!"));
+////        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+////        pack();
         setVisible(true);
     }
 
