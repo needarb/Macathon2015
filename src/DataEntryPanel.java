@@ -10,7 +10,7 @@ public class DataEntryPanel extends JPanel implements EnterListener
     private static final String ITEMIZER = "-";
     private DataEntryForm entryForm;
     private BufferedImage background;
-
+    private JPanel componentPanel;
     public DataEntryPanel(String title, DataEntryForm entryForm)
     {
         super();
@@ -31,6 +31,7 @@ public class DataEntryPanel extends JPanel implements EnterListener
         add(titlePanel);
         add(entryForm);
     }
+
 
     @Override
     public void onFormEnter(DataEntryForm dataForm)

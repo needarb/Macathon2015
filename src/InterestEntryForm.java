@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.FocusEvent;
 
 /**
@@ -27,6 +28,8 @@ public class InterestEntryForm extends DataEntryForm
         interestField = new JTextField();
         interestField.addActionListener(this);
         interestField.addFocusListener(this);
+        interestField.setPreferredSize(new Dimension(150,20));
+
         resetForm();
         add(interestField);
     }

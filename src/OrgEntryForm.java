@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.FocusEvent;
 
 /**
@@ -29,6 +30,7 @@ public class OrgEntryForm extends DataEntryForm
         orgSizeBox = new JComboBox<String>();
         orgSizeBox.addItem("Large");
         orgSizeBox.addItem("Small");
+        orgNameField.setPreferredSize(new Dimension(150,20));
         resetForm();
         add(orgSizeBox);
         add(orgNameField);

@@ -33,6 +33,8 @@ public class MajorsPanel extends JPanel implements ActionListener, FocusListener
     private void addTextField()
     {
         JTextField enterField = new JTextField("Enter a major");
+        enterField.setPreferredSize(new Dimension(150,20));
+
         enterField.addActionListener(this);
         enterField.addFocusListener(this);
         add(enterField);

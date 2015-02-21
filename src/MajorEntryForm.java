@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 
@@ -17,6 +18,7 @@ public class MajorEntryForm extends DataEntryForm
         textField = new JTextField(DEFAULT_TEXT);
         textField.addActionListener(this);
         textField.addFocusListener(this);
+        textField.setPreferredSize(new Dimension(150,20));
         add(textField);
     }
     @Override

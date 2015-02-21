@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
 import java.util.LinkedList;
 
@@ -8,9 +9,17 @@ import java.util.LinkedList;
 public abstract class DataEntryForm extends JPanel implements ActionListener,FocusListener
 {
     private LinkedList<EnterListener> enterListeners;
+    private JPanel componentPanel;
+    private JButton enterButton;
     public DataEntryForm()
     {
         enterListeners = new LinkedList<>();
+        componentPanel = new JPanel();
+        enterButton = new JButton("Enter");
+        enterButton.addActionListener(this);
+        super.add(componentPanel);
+        super.add(enterButton);
+
     }
     public abstract String convertToString();
     public abstract void resetForm();
@@ -27,5 +36,13 @@ public abstract class DataEntryForm extends JPanel implements ActionListener,Foc
         for(EnterListener el: enterListeners)
             el.onFormEnter(this);
 
+    }
+
+    @Override
+    public Component add(Component comp)
+    {
+        System.out.println("Added something");
+        componentPanel.add(comp);
+        return comp;
     }
 }

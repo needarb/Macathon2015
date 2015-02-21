@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.FocusEvent;
 
 /**
@@ -28,13 +29,21 @@ public class ResidentialEntryForm extends DataEntryForm
         semesterBox.addItem("Spring");
         semesterBox.addItem("Fall");
         floorSpinner = new JSpinner();
+
         yearSpinner = new JSpinner();
+        JSpinner.NumberEditor editor = new JSpinner.NumberEditor(yearSpinner);
+        editor.getFormat().setGroupingUsed(false);
+        yearSpinner.setEditor(editor);
+
         addFocusListener(this);
         buildingField = new JTextField(BUILDING_DEFAULT);
         buildingField.addFocusListener(this);
+        buildingField.setPreferredSize(new Dimension(150, 20));
         resetForm();
+        add(new JLabel("When? "));
         add(semesterBox);
         add(yearSpinner);
+        add(new JLabel("Floor? "));
         add(floorSpinner);
         add(buildingField);
         buildingField.addActionListener(this);

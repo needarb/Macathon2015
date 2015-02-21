@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.FocusEvent;
 
 /**
@@ -27,10 +28,17 @@ public class ClassEntryForm extends DataEntryForm
         semesterBox = new JComboBox<String>();
         semesterBox.addItem("Spring");
         semesterBox.addItem("Fall");
+
         yearSpinner = new JSpinner();
+        JSpinner.NumberEditor editor = new JSpinner.NumberEditor(yearSpinner);
+        editor.getFormat().setGroupingUsed(false);
+        yearSpinner.setEditor(editor);
+
         classField = new JTextField();
         classField.addActionListener(this);
         classField.addFocusListener(this);
+        classField.setPreferredSize(new Dimension(150,20));
+
         resetForm();
         add(semesterBox);
         add(yearSpinner);
