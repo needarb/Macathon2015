@@ -1,9 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -26,7 +24,7 @@ public class MainWindow extends JFrame
         super();
         setTitle("Ned was here");
         add(new JButton("I AM A BUTTON"));
-        add(new JLabel("I like a;osldkfja;lsdkfj!"));
+        add(new JLabel("I like a!"));
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         pack();
         setVisible(true);

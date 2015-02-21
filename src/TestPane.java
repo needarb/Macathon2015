@@ -18,14 +18,22 @@ public class TestPane extends JPanel implements AdjustmentListener, Scrollable
     }
     public TestPane()
     {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         setLayout(new BorderLayout());
+        add(new JCheckBox(), BorderLayout.NORTH);
         JScrollBar scrollBar = new JScrollBar(Adjustable.HORIZONTAL);
         scrollBar.addAdjustmentListener(this);
         add(scrollBar, BorderLayout.SOUTH);
         JPanel middlePanel = new JPanel();
         for (int i = 0; i < 4; i++)
         {
-            middlePanel.add(new JButton("Option " + i));
+            JButton b = new JButton("Option " + i);
+            b.setBackground(Color.RED);
+            middlePanel.add(b);
         }
         add(middlePanel, BorderLayout.CENTER);
 
