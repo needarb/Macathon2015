@@ -26,7 +26,7 @@ public class MainWindow extends JFrame
         super();
         setTitle("Ned was here");
         add(new JButton("I AM A BUTTON"));
-        add(new JLabel("Fuck Scott Walker"));
+        add(new JLabel("I like a;osldkfja;lsdkfj!"));
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         pack();
         setVisible(true);
